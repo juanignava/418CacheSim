@@ -47,7 +47,7 @@ bool instrument = false;
 /* ===================================================================== */
 // Command line switches
 /* ===================================================================== */
-KNOB<string> KnobOutputFile(KNOB_MODE_WRITEONCE,  "pintool",
+KNOB<std::string> KnobOutputFile(KNOB_MODE_WRITEONCE,  "pintool",
     "o", "trace_file.out", "specify file name for MyPinTool output");
 
 //KNOB<string> KnobFunctionsFile(KNOB_MODE_WRITEONCE,  "pintool",
@@ -116,7 +116,7 @@ VOID InstrumentInstruction(INS ins)
  * When this routine comes in, we start analyzing instructions for memory traces
  */
 VOID StartInstr() {
-    cout << "start\n";
+    std::cout << "start\n";
     instrument = true;
 }
 
@@ -124,7 +124,7 @@ VOID StartInstr() {
  * When this routine comes in, we stop analyzing instructions for memory traces
  */
 VOID StopInstr() {
-    cout << "stop\n";
+    std::cout << "stop\n";
     instrument = false;
 }
 
@@ -187,7 +187,7 @@ int main(int argc, char *argv[])
     if (PIN_Init(argc, argv)) return Usage();
     PIN_InitSymbols();
 
-    string fileName = KnobOutputFile.Value();
+    std::string fileName = KnobOutputFile.Value();
 
     //fill_funcs(KnobFunctionsFile.Value());
     trace = fopen(fileName.c_str(), "w");

@@ -42,7 +42,7 @@ PIN_LOCK lock;
 /* ===================================================================== */
 // Command line switches
 /* ===================================================================== */
-KNOB<string> KnobOutputFile(KNOB_MODE_WRITEONCE,  "pintool",
+KNOB<std::string> KnobOutputFile(KNOB_MODE_WRITEONCE,  "pintool",
     "o", "trace_file.out", "specify file name for MyPinTool output");
 
 
@@ -124,7 +124,7 @@ int main(int argc, char *argv[])
 {
     if (PIN_Init(argc, argv)) return Usage();
 
-    string fileName = KnobOutputFile.Value();
+    std::string fileName = KnobOutputFile.Value();
 
     trace = fopen(fileName.c_str(), "w");
     PIN_InitLock(&lock);
