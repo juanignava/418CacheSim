@@ -1,3 +1,9 @@
+"""
+Script that generates the code that will be used to compare the MOESI vs Dragon
+protocol, this is useful to notice the advantage of the write update protocols
+over the write invalidate protocols
+"""
+
 #!/usr/bin/python
 
 f = open("MOESIvDragon.trace", "w")
