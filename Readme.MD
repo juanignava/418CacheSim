@@ -19,3 +19,5 @@ Bus Transactions = 32000
 Memory Requests = 16000
 Memory Write Backs = 0
 Cache Transfers = 0
+
+4. En el caso de los análisis extra es necesario subir el tamaño de la memoria, al correr algo como lo siguiente `./run_cacheSim -c 16 -s 16384 -a 8 -p MSI -t ../traces/lock_fill_bucket.trace`
