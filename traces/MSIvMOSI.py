@@ -1,3 +1,8 @@
+"""
+Script that generates the code that will be used to compare the MSI and MOSI 
+protocol, this is useful to notice the advantage of having the O state
+"""
+
 #!/usr/bin/python
 
 f = open("MSIvMOSI.trace", "w")
